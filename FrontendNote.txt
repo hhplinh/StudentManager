@@ -1,0 +1,8 @@
+- Đầu tiên, mỗi một cửa sổ (Log In, Student Account, Staff Account, View Profile) sẽ là 1 sf::RenderTexture
+- Mỗi cửa sổ sẽ có một biến kiểm tra xem cửa sổ đó hiện hay ẩn
+- Trong vòng lặp chính, nếu cửa sổ đó hiện sẽ vẽ cửa sổ đó ra (1 giây 60 lần ở 60FPS), ví dụ window.draw(LogInWindow);
+- Tất cả các đối tượng khác của cửa sổ cũng sẽ là 1 sf::RenderTexture, được vẽ lên sf::RenderTexture cửa sổ tương ứng
+- Các đối tượng này chỉ được vẽ lên cửa sổ khi bản thân đối tượng có sự thay đổi
+- Trong while(window.pollEvent(event)), các cửa sổ sẽ có hàm processEvent(event), trong các hàm đó sẽ có các processEvent của từng đối tượng
+    (Để tối ưu hiệu năng cũng như giảm thiểu các lệnh draw(), processEvent sẽ chỉ kiểm tra cũng như thay đổi đối tượng khi có event tương ứng)
+
